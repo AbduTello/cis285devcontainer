@@ -4,7 +4,7 @@
 	"name": "Ubuntu 22.04 Dev Container",
 	// Specify the Dockerfile instead of using a build key in features
 	"build": {
-	  "dockerfile": "./Dockerfile"
+	  "dockerfile": "Dockerfile"
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
