@@ -2,35 +2,28 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
 	"name": "Ubuntu 22.04 Dev Container",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	//"image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04",
-
-//>>>>>>>"Default LINUX UNIVERSAL DOESN"T WORK WITH ARM64 ARCITECTURE SO I IMPROVISED" <<<<<<<<<<<<<
-
+	// Specify the Dockerfile instead of using a build key in features
+	"build": {
+	  "dockerfile": "./Dockerfile"
+	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-"features": {
-  "ghcr.io/devcontainers/features/node:1": {
-    "version": "18"
-  },
-
-  "build": {
-        // Path is relative to the devcontainer.json file.
-        "dockerfile": "Dockerfile"
-    }
-}
-}
-
-
+	"features": {
+	  "ghcr.io/devcontainers/features/node:1": {
+		"version": "18"
+	  }
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
+	"forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-
+	"postCreateCommand": "npm install",
 	// Configure tool-specific properties.
-	// "customizations": {},
-
+	"customizations": {
+	  "vscode": {
+		"settings": {},
+		"extensions": []
+	  }
+	},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-
+	"remoteUser": "root"
+  }
+  
